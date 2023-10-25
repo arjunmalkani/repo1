@@ -1,6 +1,7 @@
 ### Arjun Malkani Lab 6 VC
 
-def encoder(password):
+#Encoder function 
+def encoder(password): 
     try:
         encoded_password = " "
 
@@ -13,7 +14,7 @@ def encoder(password):
                     new_char = str((int(char)+3) % 10)
                     encoded_password += new_char
 
-    except ValueError as e:
+    except ValueError as e: # prints for each error raise
         print(e)
 
     except TypeError:
@@ -22,7 +23,7 @@ def encoder(password):
     return encoded_password
 
 
-def menu():
+def menu():  # sets up menu 
     print('Menu\n-------------\n1. Encode\n2. Decode\n3. Quit\n')
 
 
@@ -38,6 +39,6 @@ def main():
     elif menu_selection == 3:
         quit()
 
-
-while True:
-    main()
+if __name__ == '__main__'
+    while True: 
+        main()
