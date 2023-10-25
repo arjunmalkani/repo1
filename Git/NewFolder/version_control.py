@@ -21,31 +21,23 @@ def encoder(password):
 
     return encoded_password
 
-def decode_password(encoded_password):
-    decoded_password = ""
-    for digit in encoded_password:
-        decoded_digit = str((int(digit) - 3) % 10)
-        decoded_password += decoded_digit
-    return decoded_password
 
 def menu():
-    print('Menu\n-------------\n1. Encode\n2. Decode\n3. Quit')
-    return int(input('Please enter an option:'))
+    print('Menu\n-------------\n1. Encode\n2. Decode\n3. Quit\n')
+
 
 def main():
-    while True:
-        option = menu()
-        if option == 1:
-            password = input('Please enter your password to encode: ')
-            encoded_password = encoder(password)
-            print('Your password has been encoded and stored!')
-        elif option == 2:
-            encoded_password = input('Please enter the encoded password: ')
-            original_password = decode_password(encoded_password)
-            print(f'The encoded password is {encoded_password}, and the original password is {original_password}.')
-        elif option == 3:
-            break
-        else:
-            print('Invalid option. Please select a valid option.')
+    menu()
+    menu_selection = int(input('Please enter an option:'))
+    print()
+    if menu_selection == 1:
+        password = (input('Please enter your password to encode:'))
+        encoded_password = encoder(password)
+        print('Your password has been encoded and stored!')
+        print()
+    elif menu_selection == 3:
+        quit()
 
-main()
+
+while True:
+    main()
